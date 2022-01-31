@@ -33,7 +33,7 @@ export default function Question(props) {
     } else if (hasAnswers) {
       return answers.map((a) => <Answer answer={a} key={a.answer_id} />);
     } else {
-      return <Answer answer={} key='empty' />;
+      return <Answer answer={{ body: null }} key='empty' />;
     }
   }
 
