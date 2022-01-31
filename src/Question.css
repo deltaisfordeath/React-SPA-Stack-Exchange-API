@@ -33,6 +33,16 @@
   justify-content: space-between;
 }
 
+.Question-tags {
+  display: flex;
+  justify-content: end;
+  margin-top: 5px;
+}
+
+.Question-tag {
+  margin-left: 10px;
+}
+
 /*ALTERNATE: Only question title displayed, body and footer appear on hover*/
 /* .Question-body,
 .Question-footer {

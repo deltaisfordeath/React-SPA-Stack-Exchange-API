@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Answer from './Answer';
-import Loader from './Loader'
+import Loader from './Loader';
 import { getAnswers } from './requests';
 import './Question.css';
 
@@ -33,7 +33,7 @@ export default function Question(props) {
     } else if (hasAnswers) {
       return answers.map((a) => <Answer answer={a} key={a.answer_id} />);
     } else {
-      return <Answer answer={{ body: null }} key='empty' />;
+      return <Answer answer={{ body: null }} key="empty" />;
     }
   }
 
@@ -54,8 +54,13 @@ export default function Question(props) {
         <span>Answers: {numAnswers}</span>
         <strong>Asked on: {askDate.toDateString()}</strong>
       </div>
+      <div className="Question-tags">
+        <strong>Tags:</strong>
+        {question.tags.map((tag) => (
+          <span className="Question-tag">{` ${tag} `}</span>
+        ))}
+      </div>
       {showAnswers ? answerSection() : ''}
     </div>
   );
 }
-

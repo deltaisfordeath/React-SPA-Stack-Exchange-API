@@ -7,6 +7,7 @@ export default function Answer(props) {
   }
 
   let answer = props.answer;
+  let answerDate = new Date(props.answer.creation_date * 1000);
   //dangerouslySetInnerHTML - HTML needs to be sanitized! **********
   return (
     <div className={`Answer ${answer.is_accepted ? 'accepted' : ''}`}>
@@ -24,6 +25,8 @@ export default function Answer(props) {
         <span
           dangerouslySetInnerHTML={{ __html: answer.owner.display_name }}
         ></span>
+        {' on '}
+        {answerDate.toDateString()}
       </div>
     </div>
   );
