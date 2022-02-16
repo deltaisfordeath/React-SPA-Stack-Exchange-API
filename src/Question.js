@@ -49,16 +49,18 @@ export default function Question(props) {
         dangerouslySetInnerHTML={{ __html: question.body }}
       ></div>
       <div className="Question-footer">
-        <span>Score: {score}</span>
-        <span>Views: {numViews}</span>
-        <span>Answers: {numAnswers}</span>
-        <strong>Asked on: {askDate.toDateString()}</strong>
-      </div>
-      <div className="Question-tags">
-        <strong>Tags:</strong>
-        {question.tags.map((tag) => (
-          <span className="Question-tag">{` ${tag} `}</span>
-        ))}
+        <div className="Question-stats">
+          <span>Score: {score}</span>
+          <span>Views: {numViews}</span>
+          <span>Answers: {numAnswers}</span>
+          <strong>Asked on: {askDate.toDateString()}</strong>
+        </div>
+        <div className="Question-tags">
+          <strong>Tags:</strong>
+          {question.tags.map((tag, idx) => (
+            <span className="Question-tag" key={idx}>{` ${tag} `}</span>
+          ))}
+        </div>
       </div>
       {showAnswers ? answerSection() : ''}
     </div>

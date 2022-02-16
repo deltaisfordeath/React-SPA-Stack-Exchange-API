@@ -3,7 +3,9 @@ import axios from 'axios';
 export async function getQuestions(query) {
   try {
     let res = await axios.get(
-      `https://api.stackexchange.com/2.3/search?order=desc&sort=activity&intitle=${query}&site=stackoverflow&filter=!nKzQUR3Ecy&client_id=22738&key=jKeOpVrIkULnfB0fQehUfQ((&redirect_uri=https://stackexchange.com/oauth/login_success`
+      `https://api.stackexchange.com/2.3/search?order=desc&sort=activity&intitle=${escape(
+        query
+      )}&site=stackoverflow&filter=!nKzQUR3Ecy&client_id=22738&key=jKeOpVrIkULnfB0fQehUfQ((&redirect_uri=https://stackexchange.com/oauth/login_success`
     );
     return res.data.items;
   } catch (error) {

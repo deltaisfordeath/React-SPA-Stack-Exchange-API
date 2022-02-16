@@ -18,6 +18,7 @@ export default function SearchForm() {
       let response = await getQuestions(query);
       setQuestions(response);
       setLoading(false);
+      if (response.length === 0) alert(`No results found for search: ${query}`);
     }
   }
 

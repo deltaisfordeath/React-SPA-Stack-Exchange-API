@@ -31,12 +31,20 @@
   border-top: 1px solid gray;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Question-stats {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Question-tags {
-  display: flex;
-  justify-content: end;
   margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Question-tag {
@@ -61,7 +69,13 @@
   .Question {
     width: 90%;
   }
-  .Question-footer {
+  .Question-stats {
     flex-direction: column;
+    flex-basis: auto;
+  }
+  .Question-tags {
+    width: auto;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
